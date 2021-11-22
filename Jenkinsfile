@@ -13,11 +13,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 retry(3) {
-                    sh './flakey-deploy.sh'
+                    sh 'echo "i retry 3 times."'
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
-                    sh './health-check.sh'
+                    sh 'echo "time out 3 minutes."'
                 }
             }
         }

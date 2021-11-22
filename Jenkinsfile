@@ -10,15 +10,5 @@ pipeline {
                 '''
             }
         }
-        stage('Deploy'){
-            steps{
-                retry(3){
-                    sh 'echo retry 3 times.'
-                }
-                timeout(time:3,unit:'MINUTES'){
-                    sh 'echo timeout 3 minutes.'
-                }
-            }
-        }
     }
 }
